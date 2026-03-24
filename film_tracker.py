@@ -781,7 +781,7 @@ class FilmTrackerApp(tk.Tk):
 
         # Tlačítko reset
         make_button(fframe, "✗ Reset", command=self._reset_filters,
-                    color=BG_TABLE, fg=FG_SECONDARY,
+                    color=BG_TABLE, fg=FG_PRIMARY,
                     padx=8, pady=4).grid(row=0, column=9, padx=8)
 
     # ── Detail panel ─────────────────────────────────────────────────────────
@@ -883,7 +883,7 @@ class FilmTrackerApp(tk.Tk):
                     padx=10, pady=5).pack(side="left", padx=(0, 6))
         make_button(btn_frame, "🗑️",
                     command=self._delete_selected,
-                    color=BG_TABLE, fg=FG_SECONDARY,
+                    color=BG_TABLE, fg=FG_PRIMARY,
                     padx=10, pady=5).pack(side="left")
 
     # ── Stavový řádek ─────────────────────────────────────────────────────────
