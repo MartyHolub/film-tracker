@@ -10,23 +10,24 @@ import random
 import datetime
 
 # ── Barevné schéma ───────────────────────────────────────────────────────────
-BG_DARK      = "#1a1a2e"   # hlavní pozadí
-BG_SIDEBAR   = "#16213e"   # postranní panel
-BG_CARD      = "#0f3460"   # karta / panel
-BG_TABLE     = "#1e1e3a"   # tabulka
-BG_ROW_ODD   = "#252545"
-BG_ROW_EVEN  = "#1e1e3a"
-BG_ROW_SEL   = "#0f3460"
+BG_DARK      = "#2e1a1a"   # hlavní pozadí
+BG_SIDEBAR   = "#3e1616"   # postranní panel
+BG_CARD      = "#600f0f"   # karta / panel
+BG_TABLE     = "#3a1e1e"   # tabulka
+BG_ROW_ODD   = "#452525"
+BG_ROW_EVEN  = "#3a1e1e"
+BG_ROW_SEL   = "#600f0f"
 
 ACCENT_GREEN  = "#4ecca3"   # primární akcent (zelená)
 ACCENT_GREEN2 = "#3aaa87"   # tmavší zelená pro hover
-ACCENT_BLUE   = "#533483"   # sekundární akcent
+ACCENT_WINE   = "#833353"   # sekundární akcent
 ACCENT_RED    = "#e94560"   # nebezpečná akce
 ACCENT_YELLOW = "#f5a623"   # upozornění / hodnocení
 
 FG_PRIMARY   = "#eaeaea"
-FG_SECONDARY = "#a0a0c0"
-FG_DISABLED  = "#606080"
+FG_SECONDARY = "#c0a0a0"
+FG_DISABLED  = "#806060"
+FG_BUTTON    = "#000000"
 
 FONT_TITLE   = ("Segoe UI", 18, "bold")
 FONT_HEADING = ("Segoe UI", 11, "bold")
@@ -132,7 +133,7 @@ for i, name in enumerate(EXTRA_NAMES[:132], start=21):
 
 # ── Pomocné widgety ───────────────────────────────────────────────────────────
 
-def make_button(parent, text, command=None, color=ACCENT_GREEN, fg=BG_DARK,
+def make_button(parent, text, command=None, color=ACCENT_GREEN, fg=FG_BUTTON,
                 width=None, padx=12, pady=6, font=FONT_NORMAL):
     """Vytvoří stylizované tlačítko s hover efektem."""
     btn = tk.Button(
@@ -574,7 +575,7 @@ class FilmTrackerApp(tk.Tk):
                     color=BG_TABLE, fg=FG_PRIMARY, padx=12, pady=8).pack(side="left", padx=4)
         make_button(btn_frame, "📊 Statistiky",
                     command=self._open_statistics,
-                    color=ACCENT_BLUE, fg=FG_PRIMARY, padx=12, pady=8).pack(side="left", padx=4)
+                    color=ACCENT_WINE, fg=FG_PRIMARY, padx=12, pady=8).pack(side="left", padx=4)
 
     def _search_focus_in(self, event):
         if self._search_entry.get() == "Hledat filmy...":
@@ -847,7 +848,7 @@ class FilmTrackerApp(tk.Tk):
         badges = []
         if film.get("sledovano"):  badges.append(("✓ Sledováno", ACCENT_GREEN))
         if film.get("oblibene"):   badges.append(("❤ Oblíbené",  ACCENT_RED))
-        if film.get("watchlist"):  badges.append(("📋 Watchlist", ACCENT_BLUE))
+        if film.get("watchlist"):  badges.append(("📋 Watchlist", ACCENT_WINE))
         if not badges:             badges.append(("— Bez štítku", FG_DISABLED))
 
         for badge_text, color in badges:
