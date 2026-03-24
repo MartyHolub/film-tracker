@@ -132,7 +132,7 @@ for i, name in enumerate(EXTRA_NAMES[:132], start=21):
 
 # ── Pomocné widgety ───────────────────────────────────────────────────────────
 
-def make_button(parent, text, command=None, color=ACCENT_GREEN, fg=BG_DARK,
+def make_button(parent, text, command=None, color=ACCENT_GREEN, fg="black",
                 width=None, padx=12, pady=6, font=FONT_NORMAL):
     """Vytvoří stylizované tlačítko s hover efektem."""
     btn = tk.Button(
